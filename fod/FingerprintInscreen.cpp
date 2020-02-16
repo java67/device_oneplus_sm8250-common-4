@@ -34,6 +34,8 @@
 #define OP_DISPLAY_NOTIFY_PRESS 9
 #define OP_DISPLAY_SET_DIM 10
 
+#define DC_DIMMING_PATH "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en"
+
 namespace vendor {
 namespace lineage {
 namespace biometrics {
@@ -41,6 +43,8 @@ namespace fingerprint {
 namespace inscreen {
 namespace V1_0 {
 namespace implementation {
+
+int dc_dimming;
 
 /*
  * Write value to path and close file.
@@ -103,11 +107,16 @@ Return<void> FingerprintInscreen::onShowFODView() {
     this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
+    dc_dimming = get(DC_DIMMING_PATH, 0);
+    set(DC_DIMMING_PATH, 0);
 
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
+    if (mFodCircleVisible) {
+        set(DC_DIMMING_PATH, dc_dimming);
+    }
     this->mFodCircleVisible = false;
     this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
