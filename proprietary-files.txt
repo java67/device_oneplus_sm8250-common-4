@@ -603,6 +603,7 @@ vendor/firmware/ipa_uc.elf
 vendor/firmware/ipa_uc.mdt
 
 # Iris
+vendor/bin/irisConfig
 vendor/bin/hw/vendor.pixelworks.hardware.feature.irisfeature-service
 vendor/etc/init/vendor.pixelworks.hardware.display.iris-service.rc
 vendor/etc/init/vendor.pixelworks.hardware.feature.irisfeature-service.rc
