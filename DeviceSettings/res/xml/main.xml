@@ -17,71 +17,33 @@
 
         <SwitchPreference
             android:key="dc"
-            android:icon="@drawable/ic_dc_mode_icon"
             android:summary="@string/dc_mode_summary"
             android:title="@string/dc_mode_title" />
 
         <SwitchPreference
             android:key="hbm"
-            android:icon="@drawable/ic_hbm_mode_icon"
             android:summary="@string/hbm_mode_summary"
             android:title="@string/hbm_mode_title"
             android:defaultValue="false" />
 
-        <SwitchPreference
-            android:key="auto_hbm"
-            android:icon="@drawable/ic_autohbm_mode_icon"
-            android:summary="@string/auto_hbm_summary"
-            android:title="@string/auto_hbm_title" />
-
-        <org.evolution.device.DeviceSettings.AutoHBMThresholdPreference
-            android:key="auto_hbm_threshold"
-            android:title="@string/auto_hbm_threshold_title"
-            android:summary="@string/auto_hbm_threshold_summary" />
-
         <Preference
             android:key="panel_category"
-            android:icon="@drawable/ic_panel_modes_icon"
             android:title="@string/panel_category_title"
             android:summary="@string/panel_category_summary"
             android:persistent="false" >
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.evolution.device.DeviceSettings"
-                    android:targetClass="org.evolution.device.DeviceSettings.PanelSettingsActivity" />
+                    android:targetPackage="com.aosip.device.DeviceSettings"
+                    android:targetClass="com.aosip.device.DeviceSettings.PanelSettingsActivity" />
         </Preference>
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="gestures"
-        android:title="@string/screen_gestures_panel_title">
 
         <Preference
-            android:key="touchscreen_gesture_settings"
-            android:icon="@drawable/ic_gestures_icon"
-            android:persistent="false"
+            android:key="touchscreen_gesture_category"
             android:title="@string/touchscreen_gesture_settings_title"
-            android:summary="@string/touchscreen_gesture_settings_summary">
-            <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.android.touch.gestures"
-                    android:targetClass="com.android.touch.gestures.TouchscreenGestureSettings" />
-        </Preference>
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="doze"
-        android:title="@string/doze_panel_title">
-
-        <Preference
-        android:key="advanced_doze_settings"
-        android:icon="@drawable/ic_doze"
-        android:persistent="false"
-        android:title="@string/doze_settings_title"
-        android:summary="@string/doze_settings_summary">
-        <intent
-                  android:action="android.intent.action.MAIN"
-                  android:targetPackage="org.lineageos.settings.doze"
-                  android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity" />
+            android:summary="@string/touchscreen_gesture_settings_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.aosip.device.DeviceSettings"
+                    android:targetClass="com.aosip.device.DeviceSettings.TouchscreenGestureSettings" />
         </Preference>
     </PreferenceCategory>
 
@@ -91,14 +53,12 @@
 
         <SwitchPreference
             android:key="auto_refresh_rate"
-            android:icon="@drawable/ic_auto_refresh_icon"
             android:summary="@string/auto_refresh_rate_summary"
             android:title="@string/auto_refresh_rate_title"
             android:persistent="true" />
 
         <SwitchPreference
             android:key="refresh_rate"
-            android:icon="@drawable/ic_forced_refresh_icon"
             android:summary="@string/refresh_rate_summary"
             android:title="@string/refresh_rate_title"
             android:persistent="false" />
@@ -110,7 +70,6 @@
 
         <SwitchPreference
             android:key="fps_info"
-            android:icon="@drawable/ic_fps_overlay_icon"
             android:title="@string/fps_info_title"
             android:summary="@string/fps_info_summary"
             android:persistent="true" />
@@ -122,7 +81,6 @@
 
         <ListPreference
             android:key="keycode_top_position"
-            android:icon="@drawable/ic_up_icon"
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_top_position"
             android:summary="%s"
@@ -131,7 +89,6 @@
 
         <ListPreference
             android:key="keycode_middle_position"
-            android:icon="@drawable/ic_middle_icon"
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_middle_position"
             android:summary="%s"
@@ -140,7 +97,6 @@
 
         <ListPreference
           android:key="keycode_bottom_position"
-          android:icon="@drawable/ic_down_icon"
           android:dialogTitle="@string/notification_slider_selection_dialog_title"
           android:title="@string/notification_slider_bottom_position"
           android:summary="%s"
@@ -152,9 +108,8 @@
         android:key="vibrator"
         android:title="@string/category_vibrator">
 
-        <org.evolution.device.DeviceSettings.VibratorStrengthPreference
+        <com.aosip.device.DeviceSettings.VibratorStrengthPreference
             android:key="vib_strength"
-            android:icon="@drawable/ic_vibration_icon"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
         <Preference
