@@ -285,7 +285,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
 
-# Evolution Device Settings
+# Aosip Device Settings
 PRODUCT_PACKAGES += \
     DeviceSettings
 
@@ -302,15 +302,15 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 #FOD animations
-EXTRA_FOD_ANIMATIONS := true
+#EXTRA_FOD_ANIMATIONS := true
 
 # Prebuilts
-PRODUCT_PACKAGES += \
-    Adaway
+#PRODUCT_PACKAGES += \
+    #Adaway
 
 #Build libjamesdsp
-PRODUCT_PACKAGES += \
-    JamesDSPManager
+#PRODUCT_PACKAGES += \
+    #JamesDSPManager
 
 # Fingerprint
 PRODUCT_PACKAGES += \
