@@ -64,18 +64,104 @@
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">64</integer>
 
+    <!-- OnePlus uses a proprietary vibrator hal to utilize the new powerful motor since the
+         OnePlus 7 Pro. This HAL expects a different format for the data instead of the usual (ms)
+         timing(the duration which the vibrator is expected to vibrate for). -->
+    <bool name="config_hasOnePlusHapticMotor">true</bool>
+
     <!-- Whether device has screen with higher aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
-    <!-- FOD fingerprint scanner -->
+    <!-- Whether device has warp charging support -->
+    <bool name="config_hasWarpCharger">true</bool>
+
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/battery/fastchg_status</string>
+
+    <!-- Flag indicating which package name can access the persistent data partition -->
+    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+
+    <!-- FOD screen of doze-->
     <bool name="config_needCustomFODView">true</bool>
 
-    <!-- Does the device have a notification/battery LED? -->
-    <bool name="config_deviceHasLED">false</bool>
+    <!-- FOD screen of doze-->
+    <bool name="config_fodScreenOffDoze">true</bool>
+
+    <!-- Default fod pressed color -->
+    <integer name="config_fod_pressed_color">0</integer>
+
+    <!-- Shows the required view for in-display fingerprint -->
+    <bool name="config_supportsInDisplayFingerprint">true</bool>
+
+    <!-- Whether device supports in-display fingerprint when screen is turned off -->
+    <bool name="config_supportsScreenOffInDisplayFingerprint">true</bool>
+
+    <!-- Allow devices override audio panel location to the left side -->
+    <bool name="config_audioPanelOnLeftSide">true</bool>
 
     <!-- Does the device have a notification led -->
     <bool name="config_hasNotificationLed">false</bool>
 
-    <!-- Whether device has dash charging support -->
-    <bool name="config_hasDashCharger">true</bool>
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveNotificationLed">false</bool>
+
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option  -->
+    <bool name="config_intrusiveBatteryLed">false</bool>
+
+    <!-- Does device's LED supports fast charging ?  -->
+    <bool name="config_FastChargingLedSupported">false</bool>
+
+    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">false</bool>
+
+    <!-- Does the LED support multiple colors? Used to decide if the user can change the colors -->
+    <bool name="config_multiColorNotificationLed">false</bool>
+
+    <!-- Pocket Lock -->
+    <bool name="config_pocketModeSupported">true</bool>
+
+    <!-- Statusbar Burn in protection -->
+    <bool name="config_statusBarBurnInProtection">true</bool>
+
+    <!-- Specifies the maximum burn-in offset displacement from the center. If -1, no maximum value
+       will be used. -->
+    <integer name="config_burnInProtectionMaxRadius">-1</integer>
+
+    <!-- Specifies the minimum burn-in offset horizontally. -->
+    <integer name="config_burnInProtectionMinHorizontalOffset">-15</integer>
+
+    <!-- Specifies the maximum burn-in offset horizontally. -->
+    <integer name="config_burnInProtectionMaxHorizontalOffset">15</integer>
+
+    <!-- Specifies the minimum burn-in offset vertically. -->
+    <integer name="config_burnInProtectionMinVerticalOffset">-40</integer>
+
+    <!-- Specifies the maximum burn-in offset vertically. -->
+    <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
+
+    <!-- Defines the sysfs attribute path used by the device
+         to enable/disable DC dimming. -->
+    <string name="config_deviceDcDimmingSysfsNode">/sys/class/drm/card0-DSI-1/dimlayer_bl_en</string>
+
+    <!-- Defines custom Vendor sensor for pocket detection. -->
+    <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
+
+    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
+     vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
+
+    <!-- FPSInfoService FPS node file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/sde-crtc-0/measured_fps</string>
+
+    <!-- Enable face auth only when swiping security view -->
+    <bool name="config_faceAuthOnlyOnSecurityView">true</bool>
+
+    <!-- The list of components which should be automatically disabled for a specific device. -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+    <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+    <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
+    </string-array>
+
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
 </resources>
